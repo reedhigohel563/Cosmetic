@@ -1,0 +1,186 @@
+import Icon from "./Icons";
+import icons from "../Hooks/useIcons";
+
+const Footer = () => {
+  return (
+    <footer style={{ background: "#2B2B2B" }}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-2.5 mb-5">
+              <div
+                className="w-8 h-8 rounded-lg flex items-center justify-center"
+                style={{
+                  background: "linear-gradient(135deg, #C9A9A6, #B7A18E)",
+                }}
+              >
+                <span className="text-white text-xs font-bold tracking-tight">
+                  CI
+                </span>
+              </div>
+              <div>
+                <span
+                  className="text-base font-semibold text-white"
+                 
+                >
+                  Cosmetiq
+                </span>
+                <span
+                  className="text-xs block leading-none"
+                  style={{
+                    color: "#B7A18E",
+                   
+                  }}
+                >
+                  Intelligence
+                </span>
+              </div>
+            </div>
+            <p
+              className="text-sm leading-relaxed mb-6"
+              style={{ color: "#9B9B9B" }}
+            >
+              Premium market intelligence and strategic consulting for the
+              global beauty industry.
+            </p>
+            <div className="flex gap-3">
+              {["linkedin", "twitter", "mail"].map((key) => (
+                <a
+                  key={key}
+                  href="#"
+                  className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 hover:scale-110"
+                  style={{
+                    background: "rgba(255,255,255,0.08)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                  }}
+                >
+                  <Icon d={icons[key]} size={16} stroke="#B7A18E" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h5
+              className="text-xs font-semibold tracking-widest uppercase mb-5"
+              style={{ color: "#C9A9A6" }}
+            >
+              Quick Links
+            </h5>
+            <ul className="space-y-3">
+              {[
+                "About Us",
+                "Careers",
+                "Press & Media",
+                "Blog",
+                "Privacy Policy",
+              ].map((item) => (
+                <li key={item}>
+                  <a
+                    href="#"
+                    className="text-sm transition-colors hover:text-white"
+                    style={{
+                      color: "#9B9B9B",
+                    
+                    }}
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h5
+              className="text-xs font-semibold tracking-widest uppercase mb-5"
+              style={{ color: "#C9A9A6" }}
+            >
+              Services
+            </h5>
+            <ul className="space-y-3">
+              {[
+                "Market Research",
+                "Consumer Insights",
+                "Pricing Intelligence",
+                "Competitive Benchmarking",
+                "Distribution Analysis",
+              ].map((item) => (
+                <li key={item}>
+                  <a
+                    href="#services"
+                    className="text-sm transition-colors hover:text-white"
+                    style={{
+                      color: "#9B9B9B",
+                     
+                    }}
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h5
+              className="text-xs font-semibold tracking-widest uppercase mb-5"
+              style={{ color: "#C9A9A6"}}
+            >
+              Contact
+            </h5>
+            <ul className="space-y-4">
+              {[
+                { key: "mail", text: "hello@cosmetiqintel.com" },
+                { key: "phone", text: "+1 (212) 555-0192" },
+                {
+                  key: "location",
+                  text: "250 Park Avenue, New York, NY 10177",
+                },
+              ].map(({ key, text }) => (
+                <li key={key} className="flex items-start gap-3">
+                  <div className="mt-0.5 flex-shrink-0">
+                    <Icon d={icons[key]} size={15} stroke="#B7A18E" />
+                  </div>
+                  <span
+                    className="text-sm"
+                    style={{
+                      color: "#9B9B9B",
+                     
+                    }}
+                  >
+                    {text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div
+          className="mt-14 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+        >
+          <p
+            className="text-xs"
+            style={{ color: "#5B5B5B" }}
+          >
+            © 2025 Cosmetiq Intelligence. All rights reserved.
+          </p>
+          <p
+            className="text-xs"
+            style={{ color: "#5B5B5B" }}
+          >
+            Trusted intelligence for a beautiful industry.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
