@@ -1,3 +1,4 @@
+
 import useFadeIn from "../../Hooks/useFade";
 import Icon from "../Icons";
 import icons from "../../Hooks/useIcons";
@@ -39,82 +40,56 @@ const HomepageSection2 = () => {
   ];
 
   return (
-    <section id="services" className="py-24" style={{ background: "#F8F5F2" }}>
+    <section id="services" className="pt-10 pb-24 bg-primary-color/5">
       <div
         ref={ref}
-        className={`max-w-7xl mx-auto px-6 lg:px-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        className={`max-w-7xl mx-auto px-6 lg:px-8 transition-all duration-700 ${
+          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
       >
+        {/* Section header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span
-            className="text-xs font-semibold tracking-widest uppercase"
-            style={{ color: "#C9A9A6" }}
-          >
+          <span className="text-xs font-semibold tracking-widest uppercase text-primary-color">
             Our Expertise
           </span>
-          <h2
-            className="text-4xl lg:text-5xl font-light mt-3 leading-tight"
-            style={{
-              color: "#2B2B2B",
-             
-            }}
-          >
+          <h2 className="text-4xl lg:text-5xl font-light mt-3 leading-tight">
             Services Built for
             <br />
-            <span className="font-semibold italic" style={{ color: "#C9A9A6" }}>
+            <span className="font-semibold italic text-primary-color">
               Beauty Brands
             </span>
           </h2>
-          <p
-            className="mt-4 text-base leading-relaxed"
-            style={{ color: "#6B6B6B" }}
-          >
+          <p className="mt-4 text-base leading-relaxed opacity-80">
             Precision intelligence solutions designed specifically for the
             cosmetic and personal care industry.
           </p>
         </div>
 
+        {/* Cards grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map(({ key, title, desc }, i) => (
             <div
               key={key}
-              className="group p-8 rounded-2xl border transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
-              style={{
-                background: "white",
-                borderColor: "#F0EAE4",
-                transitionDelay: `${i * 60}ms`,
-              }}
+              className="group p-8 rounded-2xl border border-primary-color/20 bg-white transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
+              style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 group-hover:scale-110"
-                style={{ background: "#F8F5F2", border: "1px solid #E8D8C3" }}
-              >
-                <Icon d={icons[key]} size={22} stroke="#C9A9A6" />
+              {/* Icon */}
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110 bg-primary-color/10 border border-primary-color/30">
+                <Icon d={icons[key]} size={22} stroke="#CCAD8E" />
               </div>
-              <h3
-                className="text-base font-semibold mb-3 leading-snug"
-                style={{
-                  color: "#2B2B2B",
-                  
-                }}
-              >
+
+              {/* Title — inherits font-heading + text-heading-color from CSS globals */}
+              <h3 className="text-2xl font-semibold mb-3 leading-snug">
                 {title}
               </h3>
-              <p
-                className="text-sm leading-relaxed"
-                style={{
-                  color: "#7B7B7B",
-                 
-                }}
-              >
+
+              {/* Description — inherits font-body + text-body-color from CSS globals */}
+              <p className="text-base leading-relaxed opacity-80">
                 {desc}
               </p>
-              <div
-                className="mt-6 flex items-center gap-1.5 text-xs font-medium transition-all duration-200 opacity-0 group-hover:opacity-100"
-                style={{
-                  color: "#C9A9A6",
-               
-                }}
-              >
+
+              {/* Learn more */}
+              <div className="mt-6 flex items-center gap-1.5 text-sm font-medium transition-all duration-200 opacity-0 group-hover:opacity-100 text-primary-color">
                 Learn more
                 <svg
                   width="12"

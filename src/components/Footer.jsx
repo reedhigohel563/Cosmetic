@@ -1,46 +1,25 @@
+
 import Icon from "./Icons";
 import icons from "../Hooks/useIcons";
 
 const Footer = () => {
   return (
-    <footer style={{ background: "#2B2B2B" }}>
+    <footer className="bg-primary-color/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-5">
-              <div
-                className="w-8 h-8 rounded-lg flex items-center justify-center"
-                style={{
-                  background: "linear-gradient(135deg, #C9A9A6, #B7A18E)",
-                }}
-              >
-                <span className="text-white text-xs font-bold tracking-tight">
-                  CI
-                </span>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-gradient-to-br from-primary-color to-secondary-color">
+                <span className="text-white text-xs font-bold tracking-tight">CI</span>
               </div>
               <div>
-                <span
-                  className="text-base font-semibold text-white"
-                 
-                >
-                  Cosmetiq
-                </span>
-                <span
-                  className="text-xs block leading-none"
-                  style={{
-                    color: "#B7A18E",
-                   
-                  }}
-                >
-                  Intelligence
-                </span>
+                <span className="text-base font-semibold text-secondary-color font-heading">Cosmetiq</span>
+                <span className="text-xs block leading-none text-primary-color font-body">Intelligence</span>
               </div>
             </div>
-            <p
-              className="text-sm leading-relaxed mb-6"
-              style={{ color: "#9B9B9B" }}
-            >
+            <p className="text-sm leading-relaxed mb-6 text-body-color font-body">
               Premium market intelligence and strategic consulting for the
               global beauty industry.
             </p>
@@ -49,13 +28,9 @@ const Footer = () => {
                 <a
                   key={key}
                   href="#"
-                  className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 hover:scale-110"
-                  style={{
-                    background: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                  }}
+                  className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 hover:scale-110 bg-primary-color/20 border border-primary-color/30"
                 >
-                  <Icon d={icons[key]} size={16} stroke="#B7A18E" />
+                  <Icon d={icons[key]} size={16} stroke="#CCAD8E" />
                 </a>
               ))}
             </div>
@@ -63,29 +38,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h5
-              className="text-xs font-semibold tracking-widest uppercase mb-5"
-              style={{ color: "#C9A9A6" }}
-            >
+            <h5 className="text-sm font-bold tracking-widest uppercase mb-5 text-secondary-color">
               Quick Links
             </h5>
             <ul className="space-y-3">
-              {[
-                "About Us",
-                "Careers",
-                "Press & Media",
-                "Blog",
-                "Privacy Policy",
-              ].map((item) => (
+              {["About Us", "Careers", "Press & Media", "Blog", "Privacy Policy"].map((item) => (
                 <li key={item}>
-                  <a
-                    href="#"
-                    className="text-sm transition-colors hover:text-white"
-                    style={{
-                      color: "#9B9B9B",
-                    
-                    }}
-                  >
+                  <a href="#" className="text-sm text-body-color transition-colors hover:text-secondary-color font-body">
                     {item}
                   </a>
                 </li>
@@ -95,29 +54,13 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h5
-              className="text-xs font-semibold tracking-widest uppercase mb-5"
-              style={{ color: "#C9A9A6" }}
-            >
+            <h5 className="text-sm font-bold tracking-widest uppercase mb-5 text-secondary-color">
               Services
             </h5>
             <ul className="space-y-3">
-              {[
-                "Market Research",
-                "Consumer Insights",
-                "Pricing Intelligence",
-                "Competitive Benchmarking",
-                "Distribution Analysis",
-              ].map((item) => (
+              {["Market Research", "Consumer Insights", "Pricing Intelligence", "Competitive Benchmarking", "Distribution Analysis"].map((item) => (
                 <li key={item}>
-                  <a
-                    href="#services"
-                    className="text-sm transition-colors hover:text-white"
-                    style={{
-                      color: "#9B9B9B",
-                     
-                    }}
-                  >
+                  <a href="#services" className="text-sm text-body-color transition-colors hover:text-secondary-color font-body">
                     {item}
                   </a>
                 </li>
@@ -127,56 +70,30 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h5
-              className="text-xs font-semibold tracking-widest uppercase mb-5"
-              style={{ color: "#C9A9A6"}}
-            >
+            <h5 className="text-sm font-bold tracking-widest uppercase mb-5 text-secondary-color">
               Contact
             </h5>
             <ul className="space-y-4">
               {[
-                { key: "mail", text: "hello@cosmetiqintel.com" },
-                { key: "phone", text: "+1 (212) 555-0192" },
-                {
-                  key: "location",
-                  text: "250 Park Avenue, New York, NY 10177",
-                },
+                { key: "mail",     text: "hello@cosmetiqintel.com" },
+                { key: "phone",    text: "+1 (212) 555-0192" },
+                { key: "location", text: "250 Park Avenue, New York, NY 10177" },
               ].map(({ key, text }) => (
                 <li key={key} className="flex items-start gap-3">
                   <div className="mt-0.5 flex-shrink-0">
-                    <Icon d={icons[key]} size={15} stroke="#B7A18E" />
+                    <Icon d={icons[key]} size={15} stroke="#CCAD8E" />
                   </div>
-                  <span
-                    className="text-sm"
-                    style={{
-                      color: "#9B9B9B",
-                     
-                    }}
-                  >
-                    {text}
-                  </span>
+                  <span className="text-sm text-body-color font-body">{text}</span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
 
-        <div
-          className="mt-14 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
-        >
-          <p
-            className="text-xs"
-            style={{ color: "#5B5B5B" }}
-          >
-            © 2025 Cosmetiq Intelligence. All rights reserved.
-          </p>
-          <p
-            className="text-xs"
-            style={{ color: "#5B5B5B" }}
-          >
-            Trusted intelligence for a beautiful industry.
-          </p>
+        {/* Bottom bar */}
+        <div className="mt-14 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-primary-color/30">
+          <p className="text-xs text-body-color/70 font-body">© 2025 Cosmetiq Intelligence. All rights reserved.</p>
+          <p className="text-xs text-body-color/70 font-body">Trusted intelligence for a beautiful industry.</p>
         </div>
       </div>
     </footer>
